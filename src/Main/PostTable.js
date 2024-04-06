@@ -102,7 +102,9 @@ const PostTable = (props) => {
 
 
                                 {
-                                    postList.slice(startPost - 1, endPost).map((value, index) => {
+                                    postList
+                                    // .slice(startPost - 1, endPost)
+                                    .map((value, index) => {
                                         let nickName = value.userDto.nickName;
                                         return (
                                             <tr className="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600"
