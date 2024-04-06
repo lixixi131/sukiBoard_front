@@ -43,8 +43,7 @@ const PostTable = (props) => {
             .then((res) => {
                 setPostList(res.data);
                 setTotalSet(Math.ceil(postList.length / pageRange))
-                console.log(res)
-
+                
             })
             .catch((err) => {
                 console.log(err)
