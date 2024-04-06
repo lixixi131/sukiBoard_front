@@ -5,9 +5,9 @@ import { useLocation } from "react-router";
 let currentPath = "";
 
 const PostTable = (props) => {
-
-    //const url = "http://localhost:8080"
-
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
+    //const url = "http://ec2-54-180-91-222.ap-northeast-2.compute.amazonaws.com:8080"
     const [postList, setPostList] = useState([]);
     const urlParams = new URLSearchParams(window.location.search)
     let location = useLocation();
@@ -26,16 +26,16 @@ const PostTable = (props) => {
     useEffect(() => {
 
         let params;
-
         if (props.keyWord.length === 0) {
 
             //params = `${url}/post/list`
-            params ='/post/list'
-
+            //params ='/post/list'
+            params = `${url}/post/list`
+            console.log(params)
         }
         else {
             //params = `${url}/post/search?keyWord=${urlParams.get("keyWord")}`
-            params = `/post/search?keyWord=${urlParams.get("keyWord")}`
+            params = `${url}/post/search?keyWord=${urlParams.get("keyWord")}`
         
         }
 
@@ -43,8 +43,7 @@ const PostTable = (props) => {
             .then((res) => {
                 setPostList(res.data);
                 setTotalSet(Math.ceil(postList.length / pageRange))
-                console.log(res.data)
-                console.log(postList)
+
 
             })
             .catch((err) => {
@@ -103,7 +102,7 @@ const PostTable = (props) => {
 
                                 {
                                     postList
-                                    // .slice(startPost - 1, endPost)
+                                    .slice(startPost - 1, endPost)
                                     .map((value, index) => {
                                         let nickName = value.userDto.nickName;
                                         return (

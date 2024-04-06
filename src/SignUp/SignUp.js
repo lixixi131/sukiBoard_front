@@ -11,6 +11,9 @@ const SignUp = () => {
     const [isNickNameDuplicate, setIsNickNameDuplicate] = useState(false)
     const config = { "Content-Type": 'application/json' };
 
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
+
     //중복검사 함수
     const duplicateCheck = (e) => {
 
@@ -28,7 +31,7 @@ const SignUp = () => {
             'id': userId
         };
 
-        axios.post(`/signUp/duplicateCheck`, user, config)
+        axios.post(`${url}/signUp/duplicateCheck`, user, config)
             .then((res) => {
 
 
@@ -64,7 +67,7 @@ const SignUp = () => {
             'nickName': nickName
         };
 
-        axios.post(`/signUp/nickNameDuplicateCheck`, user, config)
+        axios.post(`${url}/signUp/nickNameDuplicateCheck`, user, config)
             .then((res) => {
 
 

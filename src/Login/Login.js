@@ -9,8 +9,9 @@ const Login = () => {
     const [userId, setUserId] = useState('')
     const [password, setPassword] = useState('')
 
-    const url = "http://localhost:8080"
-    const clientUrl = "http://localhost:3000"
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
+
     const config = { "Content-Type": 'application/json' };
 
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const Login = () => {
 
         console.log(JSON.stringify(user))
 
-        axios.post(`/logIn`, user)
+        axios.post(`${url}/logIn`, user)
             .then((res) => {
                 console.log(res.data);
 

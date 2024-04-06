@@ -19,6 +19,9 @@ const Comment = () => {
     const startPost = (page - 1) * pageRange + 1; // 시작 게시물 번호
     const endPost = startPost + pageRange - 1; // 끝 게시물 번호
 
+    const url = process.env.REACTAPP_HOST_URL;
+    //const url = process.env.REACTAPP_TEST_URL;
+
     useEffect(() => {
 
         getCommentList()
@@ -31,11 +34,10 @@ const Comment = () => {
     }, [commentList, page])
 
     const getCommentList = () => {
-        axios.get(`/comment/list?no=${no}`)
+        axios.get(`${url}/comment/list?no=${no}`)
             .then((res) => {
                 setCommentList(res.data);
                 setTotalSet(Math.ceil(commentList.length / pageRange))
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err);
@@ -47,7 +49,7 @@ const Comment = () => {
 
         if (checkDelete === true) {
 
-            axios.delete(`/comment/delete?no=${no}`, {
+            axios.delete(`${url}/comment/delete?no=${no}`, {
                 headers: {
                     'Authorization': "Bearer " + getCookie("accessToken")
                 }

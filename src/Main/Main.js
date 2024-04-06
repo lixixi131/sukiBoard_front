@@ -6,8 +6,8 @@ import { getCookie } from "../Cookie/Cookie";
 import { Link, useLocation } from "react-router-dom";
 
 const Main = () => {
-    //const url = "http://ec2-54-180-91-222.ap-northeast-2.compute.amazonaws.com:8080"
-
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
     const dispatch = useDispatch();
     // const number = useSelector((state) => state.counter.number);
     // const nickName = useSelector((state) => state.nickName);

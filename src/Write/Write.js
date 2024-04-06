@@ -10,6 +10,10 @@ const Write = () => {
     const [no , setNo] = useState(-1);
     const location = useLocation();
     const navigate = useNavigate();
+
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
+
     useEffect( () => {
         
         if(location.state !== null){
@@ -46,7 +50,7 @@ const Write = () => {
         }
 
         
-        axios.put(`/post/edit` , data , {
+        axios.put(`${url}/post/edit` , data , {
             headers : {
                 'Authorization' : "Bearer " +  getCookie("accessToken"),
                 'Content-Type': 'application/json'
@@ -85,7 +89,7 @@ const Write = () => {
             'userDto' : null
         }
 
-        axios.post(`/post/write` , data , {
+        axios.post(`${url}/post/write` , data , {
             headers : {
                 'Authorization' : "Bearer " +  getCookie("accessToken"),
                 'Content-Type': 'application/json'

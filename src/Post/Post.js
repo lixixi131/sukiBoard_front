@@ -15,9 +15,11 @@ const Post = () => {
     const id = useSelector((state) => state);
     const urlParams = new URLSearchParams(window.location.search)
 
+    const url = process.env.REACT_APP_HOST_URL;
+    //const url = process.env.REACT_APP_TEST_URL;
 
     useEffect(() => {
-        axios.get("/post" + "?" + "no=" + urlParams.get("no"))
+        axios.get("url"+"/post" + "?" + "no=" + urlParams.get("no"))
             .then((res) => {
                 setTitle(res.data.title);
                 setContent(res.data.content);
@@ -53,7 +55,7 @@ const Post = () => {
             }
         };
 
-        axios.post(`/comment/write`, data, {
+        axios.post(`${url}/comment/write`, data, {
             headers: {
                 'Authorization': "Bearer " + getCookie("accessToken"),
                 'Content-Type': 'application/json'
@@ -74,9 +76,8 @@ const Post = () => {
         const data = {
             "no": no
         };
-        console.log(`/post/delete?${no}`)
         if (checkDelete === true) {
-            axios.delete(`/post/delete?no=${no}`, {
+            axios.delete(`${url}/post/delete?no=${no}`, {
                 headers: {
                     'Authorization': "Bearer " + getCookie("accessToken"),
                     'Content-Type': 'application/json'
