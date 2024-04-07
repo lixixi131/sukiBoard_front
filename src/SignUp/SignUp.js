@@ -122,10 +122,10 @@ const SignUp = () => {
 
         console.log(JSON.stringify(user))
 
-        axios.post(`/signUp`, user, config)
+        axios.post(`${url}/signUp`, user, config)
             .then((res) => {
                 console.log(res.data);
-                window.location.href = "/"
+                window.location.href = `/`
             })
             .catch((err) => {
                 console.log(err.data);
