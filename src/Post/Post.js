@@ -19,13 +19,14 @@ const Post = () => {
     //const url = process.env.REACT_APP_TEST_URL;
 
     useEffect(() => {
-        axios.get("url"+"/post" + "?" + "no=" + urlParams.get("no"))
-            .then((res) => {
+        //axios.get("url"+"/post" + "?" + "no=" + urlParams.get("no"))
+        axios.get(`${url}/post?no=${urlParams.get("no")}`)
+        .then((res) => {
                 setTitle(res.data.title);
                 setContent(res.data.content);
                 setNickName(res.data.userDto.nickName);
                 setWriterId(res.data.userDto.id);
-
+                console.log(res.data)
                 //게시글의 번호 post.no
                 setNo(urlParams.get("no"));
             })
