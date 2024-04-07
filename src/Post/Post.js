@@ -86,7 +86,7 @@ const Post = () => {
             })
                 .then((res) => {
                     console.log(res.data);
-                    window.location.reload();
+                    window.location.href ="/"
 
                 })
                 .catch((err) => {

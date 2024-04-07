@@ -19,11 +19,10 @@ const Comment = () => {
     const startPost = (page - 1) * pageRange + 1; // 시작 게시물 번호
     const endPost = startPost + pageRange - 1; // 끝 게시물 번호
 
-    const url = process.env.REACTAPP_HOST_URL;
+    const url = process.env.REACT_APP_HOST_URL;
     //const url = process.env.REACTAPP_TEST_URL;
 
     useEffect(() => {
-
         getCommentList()
         setTotalSet(Math.ceil(commentList.length / pageRange))
     }, [])
@@ -34,6 +33,7 @@ const Comment = () => {
     }, [commentList, page])
 
     const getCommentList = () => {
+
         axios.get(`${url}/comment/list?no=${no}`)
             .then((res) => {
                 setCommentList(res.data);
