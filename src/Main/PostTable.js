@@ -89,9 +89,9 @@ const PostTable = (props) => {
                 <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                     <div className="overflow-hidden">
                         <table
-                            className="min-w-full text-left text-sm font-light text-surface dark:text-white">
+                            className="min-w-full text-left text-sm font-light text-surface">
                             <thead
-                                className="border-b border-neutral-200 font-medium dark:border-white/10">
+                                className="border-b border-neutral-200 font-medium ">
                                 <tr>
                                     <th scope="col" className="px-6 py-4">번호</th>
                                     <th scope="col" className="px-6 py-4">제목</th>
@@ -107,7 +107,7 @@ const PostTable = (props) => {
                                     .map((value, index) => {
                                         let nickName = value.userDto.nickName;
                                         return (
-                                            <tr className="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600"
+                                            <tr className="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100"
 
                                                 key={index} onClick={() => { trClickEvent(value.no) }}>
                                                 <td className="whitespace-nowrap px-6 py-4 font-medium" >{value.no}</td>
@@ -132,7 +132,7 @@ const PostTable = (props) => {
                         <li>
                             <a
                                 key={0}
-                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700"
                                 onClick={() => prevPage(page - 1)} $active={false}>
                                 prev
                             </a>
@@ -148,7 +148,7 @@ const PostTable = (props) => {
                                     {
                                         startPage + i <= totalSet ?
                                             <a
-                                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 "
                                                 id={startPage + i}
                                                 key={i}
                                                 onClick={() => { setPage(startPage + i) }}
@@ -170,7 +170,7 @@ const PostTable = (props) => {
                         <li>
                             <a
                                 key={7}
-                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none active:bg-neutral-100 active:text-primary-700"
                                 onClick={() => nextPage(page + 1)} $active={false}>
                                 next
 

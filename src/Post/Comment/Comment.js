@@ -87,13 +87,13 @@ const Comment = () => {
         <div class="flex flex-col p-5">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                    <h3 class="p-1 text-2xl font-extrabold dark:text-white">댓글</h3>
+                    <h3 class="p-1 text-2xl font-extrabold">댓글</h3>
 
                     <div class="overflow-hidden">
                         <table
-                            class="min-w-full text-left text-sm font-light text-surface dark:text-white">
+                            class="min-w-full text-left text-sm font-light text-surface">
                             <thead
-                                class="border-b border-neutral-200 font-medium dark:border-white/10">
+                                class="border-b border-neutral-200 font-medium">
                                 <tr>
                                     <th scope="col" class="px-6 py-4">작성자</th>
                                     <th scope="col" class="px-6 py-4">내용</th>
@@ -106,7 +106,7 @@ const Comment = () => {
                                     commentList.slice(startPost - 1, endPost).map((value, index) => {
                                         return (
 
-                                            <tr class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600"
+                                            <tr class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 "
                                                 key={index}>
 
                                                 <td class="whitespace-nowrap px-6 py-4" >{value.userDto?.nickName}</td>
@@ -145,7 +145,7 @@ const Comment = () => {
                         <li>
                             <a
                                 key={0}
-                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700"
                                 onClick={() => prevPage(page - 1)} $active={false}>
                                 prev
                             </a>
@@ -162,7 +162,7 @@ const Comment = () => {
                                     {
                                         startPage + i <= totalSet ?
                                             <a
-                                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 active:text-primary-700 :text-white :hover:bg-neutral-700"
                                                 id={startPage + i}
                                                 key={i}
                                                 onClick={() => { setPage(startPage + i) }}
@@ -184,7 +184,7 @@ const Comment = () => {
                         <li>
                             <a
                                 key={7}
-                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none active:bg-neutral-100 active:text-primary-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:focus:text-primary-500 dark:active:bg-neutral-700 dark:active:text-primary-500"
+                                className="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface transition duration-300 hover:bg-neutral-300 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none active:bg-neutral-100 active:text-primary-700 "
                                 onClick={() => nextPage(page + 1)} $active={false}>
                                 next
 
