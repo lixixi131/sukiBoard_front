@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { getCookie, setCookie } from "../Cookie/Cookie";
-import Test from "../Test";
 import { useDispatch } from "react-redux";
 import { logIn } from "../reducer/actions";
 const Login = () => {

@@ -9,7 +9,7 @@ import Main from "./Main/Main";
 import Write from "./Write/Write";
 import SignUp from "./SignUp/SignUp";
 import Post from "./Post/Post";
-
+import "./index.css"
 export const App = () =>{
 
     return(
