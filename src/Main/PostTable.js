@@ -36,7 +36,8 @@ const PostTable = (props) => {
         else {
             //params = `${url}/post/search?keyWord=${urlParams.get("keyWord")}`
             params = `${url}/post/search?keyWord=${urlParams.get("keyWord")}`
-        
+            console.log(params)
+
         }
 
         axios.get(params)

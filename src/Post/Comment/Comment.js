@@ -33,12 +33,12 @@ const Comment = () => {
     }, [commentList, page])
 
     const getCommentList = () => {
+        console.log(url , `${url}/comment/list?no=${no}` , `${url}/comment/list?no=${no}`)
 
         axios.get(`${url}/comment/list?no=${no}`)
             .then((res) => {
                 setCommentList(res.data);
                 setTotalSet(Math.ceil(commentList.length / pageRange))
-                console.log(`${url}/comment/list?no=${no}`)
             })
             .catch(err => {
                 console.log(err);
