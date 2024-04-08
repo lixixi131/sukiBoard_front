@@ -38,6 +38,7 @@ const Comment = () => {
             .then((res) => {
                 setCommentList(res.data);
                 setTotalSet(Math.ceil(commentList.length / pageRange))
+                console.log(`${url}/comment/list?no=${no}`)
             })
             .catch(err => {
                 console.log(err);
@@ -106,7 +107,6 @@ const Comment = () => {
                                         return (
 
                                             <tr class="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600"
-
                                                 key={index}>
 
                                                 <td class="whitespace-nowrap px-6 py-4" >{value.userDto?.nickName}</td>
